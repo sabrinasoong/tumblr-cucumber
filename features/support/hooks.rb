@@ -6,6 +6,7 @@ browser = Watir::Browser.new :firefox
 Before do
   @browser = browser
   @browser.cookies.clear
+  @app = App.new @browser
 end
 
 After ('@posted') do |scenario|

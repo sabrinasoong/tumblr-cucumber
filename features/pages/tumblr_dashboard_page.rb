@@ -11,7 +11,7 @@ class TumblrDashboardPage < GenericPage
   end
   
   def set_title(title)
-    @browser.div(class: "editor").send_keys title  
+    @browser.div(class: "editor").when_present.send_keys title  
   end
   
   def set_message(message)

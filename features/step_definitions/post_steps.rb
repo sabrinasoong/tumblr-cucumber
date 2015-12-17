@@ -1,11 +1,12 @@
 Given /^I'm logged into Tumblr$/  do
   @email = CONFIG["login"][0]["username"]
   @password = CONFIG["login"][1]["password"]
-  login = TumblrLoginPage.new @browser
-  login.visit
-  login.set_email(@email)
-  login.set_password(@password)
-  login.submit
+  @login = @app.login
+  @post = @app.dashboard
+  @login.visit
+  @login.set_email(@email)
+  @login.set_password(@password)
+  @login.submit
 end
 
 Given /^I'm on my dashboard$/ do
@@ -13,7 +14,6 @@ Given /^I'm on my dashboard$/ do
 end
 
 Given /^I click on a text post$/ do 
-  @post = TumblrDashboardPage.new @browser
   @post.click_post_button
 end
 
@@ -31,10 +31,10 @@ end
 
 When(/^I enter "(.+)" into the title box and select the message box$/) do |title|
   @post.set_title(title)
+  @browser.send_keys :tab
 end
 
 When(/^I enter "(.+)" into the message box and post$/) do |message|
-  
   @post.set_message(message)
   @post.submit_post(3)
 end
