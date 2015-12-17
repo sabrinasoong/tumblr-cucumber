@@ -19,6 +19,5 @@ end
 
 at_exit do
   #After all features have executed
-  #Teardown
   browser.close
 end
