@@ -10,7 +10,8 @@ Before do
 end
 
 After ('@posted') do |scenario|
-  @browser.goto "https://www.tumblr.com/blog/mega-caffeinatedyouth"
+  @blog_name = CONFIG["login"][2]["blog"]
+  @browser.goto "https://www.tumblr.com/blog/#{@blog_name}"
   #@browser.alert.ok
   @browser.div(class: "post_control").click
   @browser.div(class: "delete").click

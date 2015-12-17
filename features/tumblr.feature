@@ -16,7 +16,8 @@ Feature: Posting a valid Text Post on Tumblr after login
     When I enter "Hello" into the message box and post
     Then My dashboard should contain a text post with the message "Hello"
   
-  @posted
+  
+  @posted @wip
   Scenario: Posting a text post with a title and a message
     When I enter "Hello" into the title box and select the message box
     And I enter "This is a test post" into the message box and post

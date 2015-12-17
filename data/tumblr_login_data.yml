@@ -1,4 +1,5 @@
 login: 
-  - username: #Enter your Tumblr username
-  - password: #Enter your Tumblr password
+  - username: #Enter your Tumblr username here
+  - password: #Enter your Tumblr password here
+  - blog: #Enter the name of your blog here
   
